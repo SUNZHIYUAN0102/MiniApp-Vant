@@ -1,35 +1,56 @@
 {
-  "pages":[
-    "pages/home/home",
-    "pages/message/message",
-    "pages/contact/contact"
-  ],
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
-  },
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-      "list": [{
-          "pagePath": "pages/home/home",
-          "text": "首页",
-          "iconPath": "/images/bender.png",
-          "selectedIconPath": "/images/homer.png"
-      },{
-        "pagePath": "pages/message/message",
-        "text": "消息",
-        "iconPath": "/images/koya.png",
-        "selectedIconPath": "/images/mario.png"
-    },{
-        "pagePath": "pages/contact/contact",
-        "text": "联系",
-        "iconPath": "/images/rj.png",
-        "selectedIconPath": "/images/stan.png"
-    }]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/home/home",
+        "pages/message/message",
+        "pages/contact/contact"
+    ],
+    "preloadRule": {
+        "pages/contact/contact":{
+            "packages": ["packageA"]
+        }
+    },
+    "subPackages": [{
+        "root": "packageA",
+        "name": "p1",
+        "pages": [
+            "pages/cat/cat", 
+            "pages/dog/dog"
+        ]
+    }, {
+        "root": "packageB",
+        "name": "p2",
+        "pages": [
+            "pages/apple/apple"
+        ],
+        "independent": true
+    }],
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "my-numbers": "./components/numbers/numbers"
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/home/home",
+            "text": "首页",
+            "iconPath": "/images/bender.png",
+            "selectedIconPath": "/images/homer.png"
+        }, {
+            "pagePath": "pages/message/message",
+            "text": "消息",
+            "iconPath": "/images/koya.png",
+            "selectedIconPath": "/images/mario.png"
+        }, {
+            "pagePath": "pages/contact/contact",
+            "text": "联系",
+            "iconPath": "/images/rj.png",
+            "selectedIconPath": "/images/stan.png"
+        }]
+    },
+    "sitemapLocation": "sitemap.json"
 }

@@ -4,3 +4,7 @@
 </view>
 <van-button type="primary" bindtap="btnHandler1" data-step="{{1}}">numA++</van-button>
 <van-button type="danger" bindtap="btnHandler1" data-step="{{-1}}">numA--</van-button>
+<view>
+~~~~~~~~~~~~
+</view>
+<my-numbers></my-numbers>
