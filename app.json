@@ -5,15 +5,16 @@
         "pages/contact/contact"
     ],
     "preloadRule": {
-        "pages/contact/contact":{
-            "packages": ["packageA"]
+        "pages/contact/contact": {
+            "packages": ["packageA"],
+            "network": "all"
         }
     },
     "subPackages": [{
         "root": "packageA",
         "name": "p1",
         "pages": [
-            "pages/cat/cat", 
+            "pages/cat/cat",
             "pages/dog/dog"
         ]
     }, {
@@ -26,7 +27,9 @@
     }],
     "usingComponents": {
         "van-button": "@vant/weapp/button/index",
-        "my-numbers": "./components/numbers/numbers"
+        "my-numbers": "./components/numbers/numbers",
+        "van-tabbar": "@vant/weapp/tabbar/index",
+        "van-tabbar-item": "@vant/weapp/tabbar-item/index"
     },
     "window": {
         "backgroundTextStyle": "light",
@@ -35,6 +38,7 @@
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
+        "custom": true,
         "list": [{
             "pagePath": "pages/home/home",
             "text": "首页",
